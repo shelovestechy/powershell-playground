@@ -1,0 +1,212 @@
+# PowerShell IAM Sandbox
+
+Tämä dokumentti kokoaa yhteen, millaisia PowerShell-kokonaisuuksia
+identiteetti- ja käyttöoikeustyössä (IAM) käytetään käytännössä.
+
+Kyse ei ole yksittäisistä komennoista, vaan ajattelutasoista:
+milloin tarkistetaan nopeasti, milloin raportoidaan,
+milloin tehdään muutoksia ja missä kohtaa tarvitaan jo
+tuotantomaista rakennetta.
+
+Esimerkit ovat tarkoituksella konkreettisia ja copy–paste-henkisiä.
+Osa vaatii moduulit ja kirjautumisen (Graph / Entra).
+
+---
+
+## 1) Yhden tehtävän komennot
+(one-liners + pienet skriptit)
+
+### Hae käyttäjä ja katso attribuutit
+```powershell
+Get-MgUser -UserId "user@domain.com" -Property `
+  "displayName,userPrincipalName,mail,accountEnabled,department,jobTitle" |
+Select-Object DisplayName, UserPrincipalName, Mail, AccountEnabled, Department, JobTitle
+````
+
+### Listaa ryhmän jäsenet
+
+```powershell
+$g = Get-MgGroup -Filter "displayName eq 'esimerkkiryhmä'" -ConsistencyLevel eventual
+
+Get-MgGroupMember -GroupId $g.Id -All |
+Where-Object { $_.AdditionalProperties.'@odata.type' -eq "#microsoft.graph.user" } |
+ForEach-Object {
+  (Get-MgUser -UserId $_.Id -Property "userPrincipalName").UserPrincipalName
+}
+```
+
+### Etsi: disabled mutta silti ryhmässä
+
+```powershell
+$g = Get-MgGroup -Filter "displayName eq 'esimerkkiryhmä'" -ConsistencyLevel eventual
+
+Get-MgGroupMember -GroupId $g.Id -All |
+Where-Object { $_.AdditionalProperties.'@odata.type' -eq "#microsoft.graph.user" } |
+ForEach-Object {
+  Get-MgUser -UserId $_.Id -Property "displayName,userPrincipalName,accountEnabled"
+} |
+Where-Object { $_.AccountEnabled -eq $false } |
+Select-Object DisplayName, UserPrincipalName
+```
+
+---
+
+## 2) Raportointiskriptit
+
+(read-only inventaariot)
+
+### Jakeluryhmätyyppiset ryhmät
+
+```powershell
+Get-MgGroup -All `
+  -Filter "mailEnabled eq true and securityEnabled eq false" `
+  -ConsistencyLevel eventual |
+Select-Object DisplayName, Mail, Id |
+Export-Csv .\distribution-groups.csv -NoTypeInformation -Encoding UTF8
+```
+
+### Käyttäjät ilman kirjautumista 90 päivään
+
+```powershell
+Get-MgUser -All `
+  -Property "displayName,userPrincipalName,signInActivity" `
+  -ConsistencyLevel eventual |
+Where-Object {
+  $_.SignInActivity.LastSignInDateTime -and
+  ([datetime]$_.SignInActivity.LastSignInDateTime -lt (Get-Date).AddDays(-90))
+} |
+Select-Object DisplayName, UserPrincipalName,
+  @{N="LastSignIn";E={$_.SignInActivity.LastSignInDateTime}} |
+Export-Csv .\stale-users-90d.csv -NoTypeInformation -Encoding UTF8
+```
+
+### Guest-käyttäjät
+
+```powershell
+Get-MgUser -All `
+  -Filter "userType eq 'Guest'" `
+  -Property "displayName,userPrincipalName,createdDateTime" `
+  -ConsistencyLevel eventual |
+Select-Object DisplayName, UserPrincipalName, CreatedDateTime |
+Export-Csv .\guests.csv -NoTypeInformation -Encoding UTF8
+```
+
+---
+
+## 3) Idempotentit muutosskriptit
+
+(tee vain jos puuttuu)
+
+### Lisää käyttäjä ryhmään vain jos ei ole jo jäsen
+
+```powershell
+$groupName = "esimerkkiryhmä"
+$userUpn   = "user@domain.com"
+
+$g = Get-MgGroup -Filter "displayName eq '$groupName'" -ConsistencyLevel eventual
+$u = Get-MgUser -UserId $userUpn
+
+$members = Get-MgGroupMember -GroupId $g.Id -All
+
+if (-not ($members.Id -contains $u.Id)) {
+  New-MgGroupMember -GroupId $g.Id -DirectoryObjectId $u.Id
+}
+```
+
+### Aseta attribuutti vain jos arvo on väärä
+
+```powershell
+$u = Get-MgUser -UserId "user@domain.com" -Property "department"
+
+if ($u.Department -ne "IT") {
+  Update-MgUser -UserId $u.Id -Department "IT"
+}
+```
+
+### Luo ryhmä vain jos puuttuu
+
+```powershell
+$name = "esimerkkiryhmä"
+
+if (-not (Get-MgGroup -Filter "displayName eq '$name'" -ConsistencyLevel eventual)) {
+  New-MgGroup `
+    -DisplayName $name `
+    -MailEnabled:$false `
+    -MailNickname ($name -replace " ","") `
+    -SecurityEnabled:$true
+}
+```
+
+---
+
+## 4) Joiner–Mover–Leaver (JML)
+
+```powershell
+# Joiner
+# New-MgUser
+# perusryhmät
+# lisenssit
+# MFA baseline
+
+# Mover
+# päivitä osasto
+# päivitä ryhmät ja roolit
+
+# Leaver
+# Update-MgUser -AccountEnabled:$false
+# Revoke-MgUserSignInSession
+# poista ryhmistä
+```
+
+---
+
+## 5) Access reviews / poikkeamat
+
+### Diff: pitäisi olla vs on
+
+```powershell
+$should = @("a@example.com","b@example.com") | Sort-Object -Unique
+$is     = @("a@example.com","c@example.com") | Sort-Object -Unique
+
+Compare-Object $should $is
+```
+
+### Ryhmät ilman omistajia
+
+```powershell
+Get-MgGroup -All -ConsistencyLevel eventual |
+ForEach-Object {
+  [pscustomobject]@{
+    GroupName  = $_.DisplayName
+    OwnerCount = (Get-MgGroupOwner -GroupId $_.Id -All -ErrorAction SilentlyContinue).Count
+  }
+} |
+Where-Object { $_.OwnerCount -eq 0 } |
+Export-Csv .\groups-without-owners.csv -NoTypeInformation -Encoding UTF8
+```
+
+---
+
+## 6) Integraatiot ja API-ajattelu
+
+```powershell
+$payload = @{ Department="IT"; EnabledOnly=$true } | ConvertTo-Json
+$payload | ConvertFrom-Json
+
+$u = Get-MgUser -UserId "user@domain.com"
+Update-MgUser -UserId $u.Id -Department "IT"
+```
+
+---
+
+## 7) Tuotantomainen kokonaisuus
+
+```powershell
+New-ModuleManifest `
+  -Path .\MyModule\MyModule.psd1 `
+  -RootModule .\MyModule\MyModule.psm1
+
+Invoke-Pester .\tests
+
+# lint → test → publish
+```
