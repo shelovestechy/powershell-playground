@@ -25,10 +25,15 @@ Scripts may be rewritten, refactored, or replaced as understanding improves.
 
 ## Structure
 01-fundamentals/ Core PowerShell concepts that matter in practice
+
 02-automation-patterns/ Reusable patterns and building blocks
+
 03-identity-m365/ Identity and access–related experiments
+
 04-tools/ Small helper tools and entry scripts
+
 99-snippets/ Quick notes and one-liners
+
 docs/ Supporting notes and documentation
 
 
