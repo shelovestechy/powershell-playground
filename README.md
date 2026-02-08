@@ -36,7 +36,7 @@ Tämä polku on jaettu vaiheisiin, jotka vievät perusasioista syvään päätyy
 - [ ] **Performance Tuning:** `Measure-Command` ja .NET-luokkien hyödyntäminen.
 - [ ] **API Interaction:** `Invoke-RestMethod` (Graph API:n perusta).
 
-### Phase 4: IAM & Cloud Identity (The Senior Path)
+### Phase 4: IAM & Cloud Identity 
 *Tavoitteena hallita identiteettiä ja pääsyhallintaa ohjelmallisesti.*
 - [ ] **Microsoft Graph SDK:** Kirjautuminen, luvat (Scopes) ja resurssien hallinta.
 - [ ] **Active Directory (Hybrid):** On-prem AD -objektien hallinta ja synkronointi.
