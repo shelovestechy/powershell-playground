@@ -1,58 +1,91 @@
-# PowerShell Playground
+PowerShell Playground
 
 A personal learning playground and a growing PowerShell handbook.
 
-This repository is where I build my own understanding of PowerShell from the ground up.  
-I collect notes, experiments, small scripts, and patterns that have proven useful — or at least educational — in real IT work.
+This repo is where I build my understanding of PowerShell from the ground up.
+I keep notes, small experiments, rough scripts, and patterns that come up in real IT work.
 
-This is not just a place to “try things”, but an attempt to assemble a coherent personal reference:
-how PowerShell works, why it works that way, and how it can be used sensibly in day-to-day scenarios.
+This is not a place to “try random things”.
+The point is to slowly understand how PowerShell actually works — what’s happening under the hood, why things behave the way they do, and how to use it without guessing.
 
-Some things will be rough, rewritten, or replaced over time. That is intentional.
+Some parts are messy. Some will be rewritten later.
+That’s expected.
 
-## What this repo is
-- My personal PowerShell handbook in the making
-- A collection of study notes, small experiments, and practical examples
-- A place to test ideas safely and see what actually happens
-- Gradually shifting toward identity, access, and M365-related use cases
+How I learn (and why this looks the way it does)
 
-## What this repo is not
-- A polished production-ready module
-- A copy-paste script dump
-- A step-by-step course or tutorial series
+I focus on foundations first.
+I want to understand systems from the roots, through the trunk, and out to the branches — not just grab shiny one-liners without knowing what holds them up.
 
-This repository reflects learning in progress.
+The main books guiding this learning path:
 
-## Principles
-- Prefer objects over text
-- Try to understand what actually happens under the hood
-- Make scripts safe to re-run where possible
-- Fail clearly instead of silently
-- Write things down so future-me doesn’t have to rediscover them
+PowerShell in a Month of Lunches
 
-## Structure
-- `01-fundamentals/`  
-  Core PowerShell concepts, explored slowly and deliberately
+PowerShell 101
 
-- `02-automation-patterns/`  
-  Reusable patterns (logging, config, error handling, etc.)
+This repository is my sandbox alongside that work.
+I break things, test assumptions, write things down, and come back later to see what actually stuck.
 
-- `03-identity-m365/`  
-  Identity and access–related experiments and notes
+If some notes or scripts read like someone learning to walk — that’s because I am.
+This repo is about building real understanding, not polishing an image.
 
-- `04-tools/`  
-  Small helper tools and entry scripts
+What this repo is
 
-- `99-snippets/`  
-  Short notes, reminders, and one-liners
+A personal PowerShell handbook in progress
 
-- `docs/`  
-  Supporting notes and longer explanations
+Notes and experiments made while learning and working
 
-## Language note
-Parts of this repository are written in Finnish.  
-This is intentional — some notes are meant for personal clarity rather than external polish.
+A safe place to test ideas and see real behavior
 
-## Status
-Active learning repository.  
-Content evolves as understanding deepens.
+Slowly moving toward identity, access, and M365-related use cases
+
+What this repo is not
+
+A polished production module
+
+A copy-paste script collection
+
+A tutorial or course replacement
+
+This is learning in public, on purpose.
+
+Principles I try to follow
+
+Objects over text
+
+Understand before optimizing
+
+Scripts should survive being run twice
+
+Errors should be visible, not hidden
+
+Write things down so future-me doesn’t have to relearn them
+
+Structure
+
+01-fundamentals/
+Core PowerShell concepts, taken slow and built properly
+
+02-automation-patterns/
+Reusable ideas (logging, config, error handling)
+
+03-identity-m365/
+Identity, access, and M365-related notes and experiments
+
+04-tools/
+Small helper scripts and entry points
+
+99-snippets/
+One-liners, reminders, rough ideas
+
+docs/
+Longer notes and explanations
+
+Language note
+
+Some parts are written in Finnish.
+That’s intentional — clarity for me comes before polish for others.
+
+Status
+
+Active learning repo.
+Content changes as understanding improves.
