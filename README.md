@@ -1,116 +1,78 @@
-# PowerShell Playground
+# 🛠️ PowerShell Playground
 
-A personal learning playground and a growing PowerShell handbook.
+**A personal learning playground and a growing PowerShell handbook.**
 
-This repo is where I build my understanding of PowerShell from the ground up.  
-I keep notes, small experiments, rough scripts, and patterns that come up in real IT work.
+Tämä repositorio on hiekkalaatikkoni, jossa rakennan ymmärrykseni PowerShellistä pohjamudista alkaen. Tänne kerään muistiinpanoja, kokeiluja, raakavedoksia ja IT-arjessa vastaantulevia patterneja.
 
-This is not a place to try random things.  
-The point is to slowly understand how PowerShell actually works:  
-what happens under the hood,  
-why things behave the way they do,  
-and how to use it without guessing.
-
-Some parts are messy.  
-Some will be rewritten later.  
-That’s expected.
+Pisteenä i:n päälle tässä ei ole kyse vain kopioinnista, vaan siitä, **mitä konepellin alla tapahtuu**: miksi asiat toimivat kuten ne toimivat ja miten työkaluja käytetään ilman arvailua.
 
 ---
 
-## How I learn and why this looks the way it does
+## 🧭 Roadmap: Zero to IAM Hero
 
-I focus on foundations first.  
-I want to understand systems from the roots,  
-through the trunk,  
-and out to the branches —  
-not just grab shiny one-liners without knowing what holds them up.
+Tämä polku on jaettu vaiheisiin, jotka vievät perusasioista syvään päätyyn (Identity, Security & Automation).
 
-The main books guiding this learning path are:
+### Phase 1: The Foundation (Core Concepts)
+*Tavoitteena ymmärtää, ettei kyseessä ole teksti, vaan objektit.*
+- [ ] **The Pipeline:** Miten data virtaa (`Select-Object`, `Where-Object`, `ForEach-Object`).
+- [ ] **Object Anatomy:** Jäsenet, metodit ja ominaisuudet (`Get-Member`).
+- [ ] **Variables & Data Types:** String, Int, Array, Hashtable ja Custom Objects.
+- [ ] **Filtering & Sorting:** Tehokas datan käsittely ennen tulostusta.
+- [ ] **The Help System:** Miten löytää vastaukset itse (`Get-Help`, `Get-Command`).
 
-- PowerShell in a Month of Lunches  
-- PowerShell 101  
+### Phase 2: Logic & Scripting Basics
+*Tavoitteena kirjoittaa skriptejä, jotka tekevät päätöksiä.*
+- [ ] **Control Flow:** `if/else`, `switch`, `while` ja `do-until` loopit.
+- [ ] **Error Handling:** `Try/Catch/Finally` ja `$ErrorActionPreference`.
+- [ ] **Functions:** Parametrien käyttö, `Process`-blokit ja koodin uusiokäyttö.
+- [ ] **File I/O:** CSV, JSON ja XML -tiedostojen lukeminen ja kirjoittaminen.
+- [ ] **Scope:** Global, Script, Local ja Private muuttujien erot.
 
-This repository works as a sandbox alongside that learning.  
-I break things, test assumptions, write things down,  
-and return later to see what actually stuck.
+### Phase 3: Advanced Automation & Toolmaking
+*Tavoitteena rakentaa työkaluja, jotka kestävät käyttöä.*
+- [ ] **Advanced Functions:** `[CmdletBinding()]`, validointi-attribuutit ja dynaamiset parametrit.
+- [ ] **Modules:** Omien moduulien (.psm1) rakentaminen ja manifestit.
+- [ ] **Logging & Verbosity:** `Write-Verbose` ja transkriptien käyttö.
+- [ ] **Performance Tuning:** `Measure-Command` ja .NET-luokkien hyödyntäminen.
+- [ ] **API Interaction:** `Invoke-RestMethod` (Graph API:n perusta).
 
-If some notes or scripts read like someone learning to walk,  
-that’s because I am.  
-
-This repo is about building real understanding,  
-not polishing an image.
-
----
-
-## What this repo is
-
-A personal PowerShell handbook in progress.  
-
-Notes and experiments made while learning and working.  
-
-A safe place to test ideas and observe real behaviour.  
-
-Slowly moving toward identity, access, and M365-related use cases.
-
----
-
-## What this repo is not
-
-A polished production module.  
-
-A copy-paste script collection.  
-
-A tutorial or course replacement.
-
-This is learning in public, on purpose.
+### Phase 4: IAM & Cloud Identity (The Senior Path)
+*Tavoitteena hallita identiteettiä ja pääsyhallintaa ohjelmallisesti.*
+- [ ] **Microsoft Graph SDK:** Kirjautuminen, luvat (Scopes) ja resurssien hallinta.
+- [ ] **Active Directory (Hybrid):** On-prem AD -objektien hallinta ja synkronointi.
+- [ ] **Entra ID (Azure AD):** Käyttäjien elinkaarihallinta (JML - Joiner, Mover, Leaver).
+- [ ] **Role-Based Access Control (RBAC):** Oikeuksien auditointi ja hallinta skripteillä.
+- [ ] **Security Auditing:** Epäilyttävien muutosten monitorointi ja raportointi.
 
 ---
 
-## Principles
+## 🏛️ Structure
 
-Objects over text.  
-
-Understand before optimizing.  
-
-Scripts should survive being run twice.  
-
-Errors should be visible, not hidden.  
-
-Write things down so future-me doesn’t have to relearn them.
+* [**01-fundamentals**](./01-fundamentals) – Peruskäsitteet, hitaasti ja huolella.
+* [**02-logic-and-flow**](./02-logic-and-flow) – Silmukat, virheenkäsittely ja logiikka.
+* [**03-automation-patterns**](./03-automation-patterns) – Moduulit, logit ja uudelleenkäytettävät mallit.
+* [**04-iam-and-m365**](./04-iam-and-m365) – Identity, Entra ID, MS Graph ja tietoturva.
+* [**99-snippets**](./99-snippets) – One-linerit ja pika-apuvälineet.
+* [**docs**](./docs) – Syvemmät muistiinpanot ja kirja-analyysit.
 
 ---
 
-## Structure
+## 📜 Principles
 
-[01-fundamentals](./01-fundamentals)  
-Core PowerShell concepts, taken slow and built properly.
-
-[02-automation-patterns](./02-automation-patterns)  
-Reusable ideas like logging, config, and error handling.
-
-[03-identity-m365](./03-identity-m365)  
-Identity, access, and M365-related notes and experiments.
-
-[04-tools](./04-tools)  
-Small helper scripts and entry points.
-
-[99-snippets](./99-snippets)  
-One-liners, reminders, rough ideas.
-
-[docs](./docs)  
-Longer notes and explanations.
+1.  **Objects over text.** PowerShell ei ole Bash. Käsittele objekteja, älä parsia tekstiä.
+2.  **Understand before optimizing.** Ensin toimiva koodi, sitten vasta hienostelu.
+3.  **Idempotency.** Skriptin on voitava ajaa kahdesti ilman, että se rikkoo mitään.
+4.  **No silent failures.** Virheet saavat näkyä, jotta ne voidaan korjata.
+5.  **Future-me insurance.** Kirjoita niin, että ymmärrät koodisi vielä 6kk päästä.
 
 ---
 
-## Language note
-
-Some parts are written in Finnish.  
-That is intentional.  
-Clarity for me comes before polish for others.
+## 📚 Resources
+* *PowerShell in a Month of Lunches* (Jeffery Hicks & Travis Plunk)
+* *PowerShell 101* (Microsoft)
+* [Microsoft Learn: PowerShell Documentation](https://learn.microsoft.com/en-us/powershell/)
 
 ---
 
-## Status
-
-Active learning repository.  
-Content changes as understanding improves.
+**Status:** 🏗️ Active learning phase.
+**Language:** Suomi / English.
