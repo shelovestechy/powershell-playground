@@ -2,59 +2,44 @@
 
 Short notes from real identity and access situations.  
 Not theory.  
-Not best-practice slides.  
-Just things that keep showing up.
+Just things that keep repeating.
 
-If something sounds obvious, it probably became obvious the hard way.
+If something sounds obvious, it probably wasn’t obvious the first time.
 
 ---
 
 ## Automated leavers  
 
-In identity lifecycle terms, leavers are simple.  
+On paper, leavers are simple.  
 
-An account is disabled.  
-Access is removed.  
-Data is handled according to policy.
+Account disabled.  
+Access removed.  
+Automation runs.
 
-In real life, users often store important work under their own account.  
+In reality, important documents and emails often live under one user account.
 
-Documents live in personal folders.  
-Emails live only in one mailbox.
-
-When the user leaves, the account and mailbox are deleted.  
-At that point, the identity lifecycle has already done its job.  
-
-The data problem arrives late.
+When that account is deleted, the identity lifecycle is finished.  
+The data problem starts after.
 
 ---
 
-This is why offboarding cannot start on the last working day.
+Offboarding should not begin on the last working day.
 
-There should be a clear and boring checklist called  
+There should be a clear checklist called  
 **“Must do before you leave”**.
 
 ---
 
-That checklist should include:
-
+That checklist should cover:
 - Move work documents to shared storage  
-- Store important files in agreed locations  
-- Archive or move important emails to shared mailboxes or folders  
+- Store files in agreed locations  
+- Archive or move important emails to shared places  
 
 ---
 
-When this is done early, information stays accessible.  
-Automation works as intended.  
-Nobody needs emergency exceptions.
+Doing this early keeps access clean.  
+Automation works.  
+Nobody needs exceptions.
 
-Keeping leaver accounts alive “just in case” turns automation into a suggestion.  
-
-It also creates extra manual work.  
-And awkward questions like  
-“Can we keep this account for one more month?”
-
----
-
-Good identity lifecycle design assumes people will forget.  
-Good processes plan for that and still work.
+Keeping leaver accounts alive “just in case” defeats the point.  
+It adds manual work and awkward follow-up.
