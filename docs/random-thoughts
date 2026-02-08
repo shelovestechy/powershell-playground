@@ -1,44 +1,60 @@
-##Random thoughts
+## Random thoughts  
 
-Short notes from real identity and access situations.
-Not theory. Not best-practice slides. Just things that keep showing up.
+Short notes from real identity and access situations.  
+Not theory.  
+Not best-practice slides.  
+Just things that keep showing up.
 
-If something sounds obvious, it probably became obvious the hard way...
+If something sounds obvious, it probably became obvious the hard way.
 
---
+---
 
-##Automated leavers
+## Automated leavers  
 
-In identity lifecycle terms, leavers are simple.
-An account is disabled. Access is removed. Data is handled according to policy.
+In identity lifecycle terms, leavers are simple.  
 
-In real life, users often store important work under their own account.
-Documents live in personal folders.
+An account is disabled.  
+Access is removed.  
+Data is handled according to policy.
+
+In real life, users often store important work under their own account.  
+
+Documents live in personal folders.  
 Emails live only in one mailbox.
 
-When the user leaves, the account and mailbox are deleted.
-At that point, the identity lifecycle has already done its job.
+When the user leaves, the account and mailbox are deleted.  
+At that point, the identity lifecycle has already done its job.  
+
 The data problem arrives late.
+
+---
 
 This is why offboarding cannot start on the last working day.
 
-There should be a clear and boring checklist called *“Must do before you leave”.*
+There should be a clear and boring checklist called  
+**“Must do before you leave”**.
 
-It should include:
+---
 
-Move work documents to shared storage
+That checklist should include:
 
-Store important files in agreed locations
+- Move work documents to shared storage  
+- Store important files in agreed locations  
+- Archive or move important emails to shared mailboxes or folders  
 
-Archive or move important emails to shared mailboxes or folders
+---
 
-When this is done early, access stays clean.
-Automation works as intended.
+When this is done early, information stays accessible.  
+Automation works as intended.  
 Nobody needs emergency exceptions.
 
-Keeping leaver accounts alive “just in case” turns automation into a suggestion.
-It also creates extra manual work and awkward questions like
+Keeping leaver accounts alive “just in case” turns automation into a suggestion.  
+
+It also creates extra manual work.  
+And awkward questions like  
 “Can we keep this account for one more month?”
 
-Good identity lifecycle design assumes people will forget.
+---
+
+Good identity lifecycle design assumes people will forget.  
 Good processes plan for that and still work.
