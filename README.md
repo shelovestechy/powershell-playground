@@ -82,24 +82,23 @@ Write things down so future-me doesn’t have to relearn them.
 
 ## Structure
 
-01-fundamentals  
+[01-fundamentals](./01-fundamentals)  
 Core PowerShell concepts, taken slow and built properly.
 
-02-automation-patterns  
+[02-automation-patterns](./02-automation-patterns)  
 Reusable ideas like logging, config, and error handling.
 
-03-identity-m365  
+[03-identity-m365](./03-identity-m365)  
 Identity, access, and M365-related notes and experiments.
 
-04-tools  
+[04-tools](./04-tools)  
 Small helper scripts and entry points.
 
-99-snippets  
+[99-snippets](./99-snippets)  
 One-liners, reminders, rough ideas.
 
-docs  
+[docs](./docs)  
 Longer notes and explanations.
-
 ---
 
 ## Language note
