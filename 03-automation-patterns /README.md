@@ -9,5 +9,4 @@ Täällä rakennetaan työkaluja, jotka on tarkoitettu muidenkin kuin itsesi kä
 - [ ] **Performance:** Testaa koodin nopeutta `Measure-Command` avulla.
 - [ ] **API basics:** Ensimmäiset kokeilut `Invoke-RestMethod` kanssa.
 
-### Työkalut:
-*Tänne voit tallentaa omia "työkalu-skriptejäsi".*
+
