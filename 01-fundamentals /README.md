@@ -9,5 +9,3 @@ Tämä osio keskittyy PowerShellin ytimeen: objekteihin. Tavoitteena on oppia po
 - [ ] **Filtering & Sorting:** Käytä `Where-Object` ja `Sort-Object` suodattamiseen.
 - [ ] **The Help System:** Opi käyttämään `Get-Help -Examples` ja `Get-Command`.
 
-### Harjoitukset:
-*Luo tänne .ps1 tiedostoja, joissa kokeilet yllä olevia asioita.*
