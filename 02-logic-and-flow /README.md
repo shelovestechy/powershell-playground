@@ -10,5 +10,3 @@ Tässä osiossa opetellaan tekemään päätöksiä ja toistamaan toimintoja äl
 - [ ] **File I/O:** Lue ja kirjoita CSV- ja JSON-tiedostoja (`Import-Csv`, `ConvertTo-Json`).
 - [ ] **Scopes:** Ymmärrä missä muuttuja on elossa (Global vs. Local).
 
-### Muistiinpanot:
-*Tänne voit lisätä huomioita siitä, milloin kannattaa käyttää switchiä if-lauseen sijaan.*
