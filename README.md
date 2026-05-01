@@ -1,78 +1,111 @@
 # 🛠️ PowerShell Playground
 
-**A personal learning playground and a growing PowerShell handbook.**
+**A personal learning playground, practical lab, and growing PowerShell handbook.**
 
-Tämä repositorio on hiekkalaatikkoni, jossa rakennan ymmärrykseni PowerShellistä pohjamudista alkaen. Tänne kerään muistiinpanoja, kokeiluja, raakavedoksia ja IT-arjessa vastaantulevia patterneja.
+This repository documents my journey of learning PowerShell from the ground up and turning that knowledge into practical IT automation skills.
 
-Pisteenä i:n päälle tässä ei ole kyse vain kopioinnista, vaan siitä, **mitä konepellin alla tapahtuu**: miksi asiat toimivat kuten ne toimivat ja miten työkaluja käytetään ilman arvailua.
+The goal is not to collect random scripts or copy-paste commands. The goal is to understand what happens under the hood: how PowerShell handles objects, how data moves through the pipeline, how scripts make decisions, and how automation can support real IT, Microsoft 365, and identity-related work.
+
+This repository includes notes, experiments, small scripts, reusable patterns, troubleshooting examples, and practical exercises based on topics I encounter while building my technical skill set.
+
+---
+
+## 🎯 Current Focus
+
+I am currently building a stronger foundation in PowerShell with a focus on:
+
+- Understanding the PowerShell pipeline and object-based output
+- Working with variables, arrays, hashtables, and custom objects
+- Filtering, sorting, and transforming data
+- Reading and writing CSV and JSON files
+- Writing clearer, safer, and more reusable scripts
+- Connecting PowerShell learning toward Microsoft 365, Entra ID, and IAM-related automation
+
+This is an active learning repository, so the content will grow over time as my skills develop.
 
 ---
 
 ## 🧭 Roadmap: Zero to IAM Hero
 
-Tämä polku on jaettu vaiheisiin, jotka vievät perusasioista syvään päätyyn (Identity, Security & Automation).
+This roadmap is divided into phases that move from PowerShell fundamentals toward identity, security, and automation.
 
-### Phase 1: The Foundation (Core Concepts)
-*Tavoitteena ymmärtää, ettei kyseessä ole teksti, vaan objektit.*
-- [ ] **The Pipeline:** Miten data virtaa (`Select-Object`, `Where-Object`, `ForEach-Object`).
-- [ ] **Object Anatomy:** Jäsenet, metodit ja ominaisuudet (`Get-Member`).
-- [ ] **Variables & Data Types:** String, Int, Array, Hashtable ja Custom Objects.
-- [ ] **Filtering & Sorting:** Tehokas datan käsittely ennen tulostusta.
-- [ ] **The Help System:** Miten löytää vastaukset itse (`Get-Help`, `Get-Command`).
+### Phase 1: The Foundation — Core Concepts
+
+**Goal:** Understand that PowerShell works with objects, not just plain text.
+
+- [x] Basic command structure
+- [x] Using `Get-Help`, `Get-Command`, and `Get-Member`
+- [x] Understanding objects, properties, and methods
+- [x] Basic pipeline usage
+- [x] Working with variables
+- [ ] Deeper pipeline practice with `Select-Object`, `Where-Object`, and `ForEach-Object`
+- [ ] Arrays, hashtables, and custom objects
+- [ ] Filtering and sorting data effectively
+- [ ] Building small examples to explain object-based thinking clearly
 
 ### Phase 2: Logic & Scripting Basics
-*Tavoitteena kirjoittaa skriptejä, jotka tekevät päätöksiä.*
-- [ ] **Control Flow:** `if/else`, `switch`, `while` ja `do-until` loopit.
-- [ ] **Error Handling:** `Try/Catch/Finally` ja `$ErrorActionPreference`.
-- [ ] **Functions:** Parametrien käyttö, `Process`-blokit ja koodin uusiokäyttö.
-- [ ] **File I/O:** CSV, JSON ja XML -tiedostojen lukeminen ja kirjoittaminen.
-- [ ] **Scope:** Global, Script, Local ja Private muuttujien erot.
 
-### Phase 3: Advanced Automation & Toolmaking
-*Tavoitteena rakentaa työkaluja, jotka kestävät käyttöä.*
-- [ ] **Advanced Functions:** `[CmdletBinding()]`, validointi-attribuutit ja dynaamiset parametrit.
-- [ ] **Modules:** Omien moduulien (.psm1) rakentaminen ja manifestit.
-- [ ] **Logging & Verbosity:** `Write-Verbose` ja transkriptien käyttö.
-- [ ] **Performance Tuning:** `Measure-Command` ja .NET-luokkien hyödyntäminen.
-- [ ] **API Interaction:** `Invoke-RestMethod` (Graph API:n perusta).
+**Goal:** Write scripts that can make decisions, handle data, and avoid unnecessary repetition.
 
-### Phase 4: IAM & Cloud Identity 
-*Tavoitteena hallita identiteettiä ja pääsyhallintaa ohjelmallisesti.*
-- [ ] **Microsoft Graph SDK:** Kirjautuminen, luvat (Scopes) ja resurssien hallinta.
-- [ ] **Active Directory (Hybrid):** On-prem AD -objektien hallinta ja synkronointi.
-- [ ] **Entra ID (Azure AD):** Käyttäjien elinkaarihallinta (JML - Joiner, Mover, Leaver).
-- [ ] **Role-Based Access Control (RBAC):** Oikeuksien auditointi ja hallinta skripteillä.
-- [ ] **Security Auditing:** Epäilyttävien muutosten monitorointi ja raportointi.
+- [x] Basic script structure
+- [x] Simple variables and output
+- [x] `if`, `else`, and `elseif`
+- [ ] `switch` statements
+- [ ] `while`, `do-until`, and `foreach` loops
+- [ ] Basic error handling with `Try`, `Catch`, and `Finally`
+- [ ] Understanding `$ErrorActionPreference`
+- [ ] Reading and writing CSV files
+- [ ] Reading and writing JSON files
+- [ ] Understanding variable scope: Global, Script, Local, and Private
+
+### Phase 3: Functions, Reusability & Toolmaking
+
+**Goal:** Move from small scripts toward reusable tools.
+
+- [x] Writing basic functions
+- [x] Using parameters properly
+- [x] Understanding pipeline input in functions
+- [ ] Using `Process` blocks
+- [ ] Introduction to `[CmdletBinding()]`
+- [ ] Parameter validation
+- [ ] Creating reusable helper functions
+- [ ] Organizing scripts into modules
+- [ ] Writing code that future-me can still understand six months later
+
+### Phase 4: Automation Patterns
+
+**Goal:** Build scripts that are clearer, safer, and more useful in real IT environments.
+
+- [x] Logging patterns
+- [ ] Using `Write-Verbose`
+- [ ] Using transcripts
+- [ ] Safer script execution and testing habits
+- [ ] Idempotent scripting: scripts that can run more than once without breaking things
+- [ ] Measuring performance with `Measure-Command`
+- [ ] Understanding when to use native PowerShell and when .NET classes are useful
+- [ ] Building repeatable admin workflows
+
+### Phase 5: IAM, Microsoft 365 & Cloud Identity
+
+**Goal:** Apply PowerShell knowledge to identity and access management scenarios.
+
+- [x] Understanding the role of PowerShell in Microsoft 365 and identity administration
+- [x] Basic awareness of Microsoft Graph and why it replaced older Azure AD / MSOnline modules
+- [x] Understanding the purpose of permissions and scopes at a high level
+- [ ] Microsoft Graph PowerShell SDK basics
+- [ ] Connecting to Microsoft Graph
+- [ ] Understanding Graph permissions and scopes in practice
+- [ ] Reading user and group data
+- [ ] Entra ID user lifecycle basics
+- [ ] Joiner, Mover, Leaver automation concepts
+- [ ] Group membership reporting
+- [ ] Role-Based Access Control reporting
+- [ ] Basic security and access review reporting
+- [ ] Documenting identity automation use cases clearly
 
 ---
 
-## 🏛️ Structure
+## 🏛️ Repository Structure
 
-* [**01-fundamentals**](./01-fundamentals) – Peruskäsitteet, hitaasti ja huolella.
-* [**02-logic-and-flow**](./02-logic-and-flow) – Silmukat, virheenkäsittely ja logiikka.
-* [**03-automation-patterns**](./03-automation-patterns) – Moduulit, logit ja uudelleenkäytettävät mallit.
-* [**04-iam-and-m365**](./04-iam-and-m365) – Identity, Entra ID, MS Graph ja tietoturva.
-* [**99-snippets**](./99-snippets) – One-linerit ja pika-apuvälineet.
-* [**docs**](./docs) – Syvemmät muistiinpanot ja kirja-analyysit.
-
----
-
-## 📜 Principles
-
-1.  **Objects over text.** PowerShell ei ole Bash. Käsittele objekteja, älä parsia tekstiä.
-2.  **Understand before optimizing.** Ensin toimiva koodi, sitten vasta hienostelu.
-3.  **Idempotency.** Skriptin on voitava ajaa kahdesti ilman, että se rikkoo mitään.
-4.  **No silent failures.** Virheet saavat näkyä, jotta ne voidaan korjata.
-5.  **Future-me insurance.** Kirjoita niin, että ymmärrät koodisi vielä 6kk päästä.
-
----
-
-## 📚 Resources
-* *PowerShell in a Month of Lunches* (Jeffery Hicks & Travis Plunk)
-* *PowerShell 101* (Microsoft)
-* [Microsoft Learn: PowerShell Documentation](https://learn.microsoft.com/en-us/powershell/)
-
----
-
-**Status:** 🏗️ Active learning phase.
-**Language:** Suomi / English.
+```text
+01-fundamentals/
