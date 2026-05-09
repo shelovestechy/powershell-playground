@@ -1,6 +1,8 @@
 # Microsoft Graph + PowerShell: komentoja oikeaan käyttöön
 
-Tämä tiedosto on käytännön listaus Microsoft Graph PowerShell -komennoista, joita IAM-, Entra ID- ja Microsoft 365 -hommissa oikeasti tarvitaan.
+Tämä tiedosto on käytännön listaus Microsoft Graph PowerShell -komennoista, joita IAM-, Entra ID- ja Microsoft 365 -hommissa oikeasti tarvitaan. 
+
+((Huom. lisenssien lisäys ym on ehket helpompaa tai selkeämpää tehdä Entran kautta mutta nämä on hyvä osata anyways))
 
 Ei pelkkää “tässä komento, onnea matkaan” -meininkiä, vaan mitä komento tekee, milloin sitä käytetään ja pieni esimerkki Ankkalinna-ympäristöllä.
 
@@ -31,7 +33,7 @@ Jos pitää muokata käyttäjiä tai ryhmiä, tarvitaan laajemmat oikeudet:
 
 Elikkäs:
 
-> Ensin pyydetään vain lukuoikeudet. Muokkausoikeudet vasta sitten, kun oikeasti pitää muuttaa jotain.
+> Ensin pyydetään vain lukuoikeudet. Muokkausoikeudet vasta sitten, kun ihan oikeasti pitää muuttaa jotain.
 
 ---
 
@@ -41,7 +43,7 @@ Elikkäs:
 
 Tällä näet nykyisen Graph-yhteyden tiedot.
 
-Hyödyllinen komento, koska väärään tenanttiin kirjautuminen on todella klassinen IT-ansakuoppa. Kaikki näyttää aluksi hyvältä, kunnes huomaat, että olet ihan väärässä ympäristössä.
+Hyödyllinen komento, koska väärään tenanttiin kirjautuminen on todella klassinen sekasotku. Kaikki näyttää aluksi hyvältä, kunnes huomaat, että olet ihan väärässä paikassa.
 
 Elikkäs:
 
@@ -119,7 +121,7 @@ Useammin kannattaa hakea vain tarvittavat kentät:
 
 Elikkäs:
 
-> Kaikki käyttäjät saa haettua, mutta fiksu admin hakee vain sen mitä tarvitsee.
+> Kaikki käyttäjät saa haettua, mutta fiksu ihminen hakee vain sen mitä tarvitsee.
 
 ---
 
@@ -246,7 +248,7 @@ Tätä käytetään esimerkiksi, kun:
 
 - työntekijä lähtee
 - tunnus pitää lukita nopeasti
-- epäillään väärinkäyttöä
+- epäillään väärinkäyttöä (!!!)
 - halutaan estää kirjautuminen ennen lopullista poistoprosessia
 
 Elikkäs:
@@ -360,7 +362,7 @@ Tätä käytetään esimerkiksi, kun:
 - käyttäjä siirtyy uuteen rooliin
 - käyttäjä saa pääsyn sovellukseen ryhmän kautta
 
-IAM-ajattelussa ryhmään lisääminen ei ole vain “lisätään nyt kun pyydettiin”.
+Muista: ryhmään lisääminen ei ole vain “lisätään nyt kun pyydettiin” !
 
 Hyvät kysymykset:
 
@@ -707,7 +709,7 @@ Ei tehdä sokkona. Ei sählätä. Ei “katotaan mitä tapahtuu” tuotannossa. 
 
 ---
 
-## 35. Muista tämä IAM-ajattelussa
+## 35. Muista tämä:
 
 PowerShell-komento on vain työkalu.
 
