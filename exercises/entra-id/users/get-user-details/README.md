@@ -1,5 +1,13 @@
 # 01 – Find a user in Entra ID
 
+| | |
+| --- | --- |
+| Level | 🌱 Starting point |
+| Impact | 🟢 Read only |
+| Tool | Microsoft Graph PowerShell |
+| Required scope | `User.Read.All` |
+| Validation | Syntax checked. Live use requires approved tenant access. |
+
 ## Situation
 
 A user contacts Service Desk because they can't access an application.
@@ -33,24 +41,24 @@ The account needs permission to read the requested user properties. Consent rule
 From the repository root:
 
 ```powershell
-.\exercises\identity-and-access\01-user-lookup\Get-EntraUserDetails.ps1 `
+.\exercises\entra-id\users\get-user-details\Get-EntraUserDetails.ps1 `
     -UserId 'user@contoso.com'
 ```
 
 Search by exact display name:
 
 ```powershell
-.\exercises\identity-and-access\01-user-lookup\Get-EntraUserDetails.ps1 `
+.\exercises\entra-id\users\get-user-details\Get-EntraUserDetails.ps1 `
     -DisplayName 'Adele Vance'
 ```
 
 Search by email or employee ID:
 
 ```powershell
-.\exercises\identity-and-access\01-user-lookup\Get-EntraUserDetails.ps1 `
+.\exercises\entra-id\users\get-user-details\Get-EntraUserDetails.ps1 `
     -Mail 'user@contoso.com'
 
-.\exercises\identity-and-access\01-user-lookup\Get-EntraUserDetails.ps1 `
+.\exercises\entra-id\users\get-user-details\Get-EntraUserDetails.ps1 `
     -EmployeeId '12345'
 ```
 

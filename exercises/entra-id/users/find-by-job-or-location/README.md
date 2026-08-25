@@ -1,5 +1,13 @@
 # 03 – Find Entra ID users by job or location
 
+| | |
+| --- | --- |
+| Level | 🌱 Starting point |
+| Impact | 🟢 Read only |
+| Tool | Microsoft Graph PowerShell |
+| Required scope | `User.Read.All` |
+| Validation | Syntax checked. Live use requires approved tenant access. |
+
 ## Situation
 
 A manager asks which users work in a certain role or office.
@@ -30,21 +38,21 @@ The result is only as useful as the user attributes stored in Entra ID. An empty
 Find users by job title:
 
 ```powershell
-.\exercises\identity-and-access\03-filter-users-by-job-or-location\Find-EntraUserByAttribute.ps1 `
+.\exercises\entra-id\users\find-by-job-or-location\Find-EntraUserByAttribute.ps1 `
     -JobTitle 'Service Desk Analyst'
 ```
 
 Find users by location:
 
 ```powershell
-.\exercises\identity-and-access\03-filter-users-by-job-or-location\Find-EntraUserByAttribute.ps1 `
+.\exercises\entra-id\users\find-by-job-or-location\Find-EntraUserByAttribute.ps1 `
     -OfficeLocation 'Helsinki'
 ```
 
 Use both filters:
 
 ```powershell
-.\exercises\identity-and-access\03-filter-users-by-job-or-location\Find-EntraUserByAttribute.ps1 `
+.\exercises\entra-id\users\find-by-job-or-location\Find-EntraUserByAttribute.ps1 `
     -JobTitle 'Service Desk Analyst' `
     -OfficeLocation 'Helsinki'
 ```

@@ -1,5 +1,13 @@
 # 02 – List shared mailbox access
 
+| | |
+| --- | --- |
+| Level | 🌿 Building confidence |
+| Impact | 🟢 Read only |
+| Tool | Exchange Online PowerShell |
+| Required access | An Exchange Online role that can view mailbox permissions |
+| Validation | Syntax checked. Live use requires approved tenant access. |
+
 ## Situation
 
 A user can open a shared mailbox but they can't send messages from it.
@@ -29,7 +37,7 @@ The signed-in account also needs a suitable Exchange Online role. The exact role
 ## Run the script
 
 ```powershell
-.\exercises\identity-and-access\02-shared-mailbox-members\Get-SharedMailboxAccess.ps1 `
+.\exercises\exchange-online\shared-mailbox-access\Get-SharedMailboxAccess.ps1 `
     -MailboxIdentity 'shared-mailbox@contoso.com'
 ```
 
