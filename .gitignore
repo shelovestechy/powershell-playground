@@ -1,20 +1,2 @@
-# PowerShell local stuff
-*.log
+output/
 *.tmp
-*.bak
-
-# Secrets / local config
-config.json
-config.local.json
-secrets.json
-
-# PowerShell modules (if installed locally)
-Modules/
-PSModules/
-
-# VS Code
-.vscode/
-
-# OS junk
-.DS_Store
-Thumbs.db

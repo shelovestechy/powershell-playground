@@ -1,0 +1,14 @@
+Timestamp,UserPrincipalName,Result,IPAddress,Country,Application
+2026-08-20T06:42:00Z,aku.ankka@ankkalinna.example,Failure,192.0.2.10,FI,Microsoft 365
+2026-08-20T06:44:00Z,aku.ankka@ankkalinna.example,Failure,192.0.2.10,FI,Microsoft 365
+2026-08-20T06:48:00Z,aku.ankka@ankkalinna.example,Failure,198.51.100.22,SE,Microsoft 365
+2026-08-20T06:51:00Z,aku.ankka@ankkalinna.example,Failure,203.0.113.7,SE,Azure Portal
+2026-08-20T07:05:00Z,aku.ankka@ankkalinna.example,Success,192.0.2.10,FI,Microsoft 365
+2026-08-20T08:10:00Z,iines.ankka@ankkalinna.example,Failure,192.0.2.44,FI,Microsoft 365
+2026-08-20T08:11:00Z,iines.ankka@ankkalinna.example,Failure,192.0.2.44,FI,Microsoft 365
+2026-08-20T08:13:00Z,iines.ankka@ankkalinna.example,Failure,192.0.2.44,FI,Microsoft 365
+2026-08-20T09:20:00Z,roope.ankka@ankkalinna.example,Failure,192.0.2.80,FI,Finance App
+2026-08-20T09:22:00Z,roope.ankka@ankkalinna.example,Failure,192.0.2.80,FI,Finance App
+2026-08-20T10:03:00Z,minni.hiiri@ankkalinna.example,Failure,192.0.2.91,FI,Microsoft 365
+2026-08-20T10:05:00Z,minni.hiiri@ankkalinna.example,Success,192.0.2.91,FI,Microsoft 365
+2026-08-20T11:30:00Z,hannu.hanhi@ankkalinna.example,Success,192.0.2.120,FI,Microsoft 365
