@@ -1,5 +1,13 @@
 # 04 – List or export Entra ID group members
 
+| | |
+| --- | --- |
+| Level | 🌿 Building confidence |
+| Impact | 🟡 Optional local output |
+| Tool | Microsoft Graph PowerShell |
+| Required scopes | `Group.Read.All`, `GroupMember.Read.All`, `User.Read.All` |
+| Validation | Syntax checked. Live use requires approved tenant access. |
+
 ## Situation
 
 A group owner asks for a list of users who currently have access to an application.
@@ -32,14 +40,14 @@ Get-MgContext
 Show the result in PowerShell:
 
 ```powershell
-.\exercises\identity-and-access\04-export-group-members\Export-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\list-group-members\Export-EntraGroupMembers.ps1 `
     -GroupDisplayName 'SG-Example-App-Users'
 ```
 
 Open the result in a searchable window:
 
 ```powershell
-.\exercises\identity-and-access\04-export-group-members\Export-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\list-group-members\Export-EntraGroupMembers.ps1 `
     -GroupDisplayName 'SG-Example-App-Users' |
     Out-GridView
 ```
@@ -47,7 +55,7 @@ Open the result in a searchable window:
 Create a CSV only when an Excel-friendly file is needed:
 
 ```powershell
-.\exercises\identity-and-access\04-export-group-members\Export-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\list-group-members\Export-EntraGroupMembers.ps1 `
     -GroupDisplayName 'SG-Example-App-Users' `
     -OutputPath '.\output\example-app-users.csv'
 ```
@@ -55,7 +63,7 @@ Create a CSV only when an Excel-friendly file is needed:
 If two groups have the same display name the script stops and asks for the object ID:
 
 ```powershell
-.\exercises\identity-and-access\04-export-group-members\Export-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\list-group-members\Export-EntraGroupMembers.ps1 `
     -GroupId '00000000-0000-0000-0000-000000000000'
 ```
 

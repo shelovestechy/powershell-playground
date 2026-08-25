@@ -2,8 +2,9 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
-$scriptPath = Join-Path $repositoryRoot 'scripts/Measure-SignInActivity.ps1'
-$inputPath = Join-Path $repositoryRoot 'examples/sign-ins.csv'
+$exerciseRoot = Join-Path $repositoryRoot 'exercises/security-and-audit/sign-in-activity'
+$scriptPath = Join-Path $exerciseRoot 'Measure-SignInActivity.ps1'
+$inputPath = Join-Path $exerciseRoot 'sign-ins.csv'
 
 function Assert-Equal {
     param(

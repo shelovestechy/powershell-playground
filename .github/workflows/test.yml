@@ -19,6 +19,10 @@ jobs:
         shell: pwsh
         run: ./tests/Test-ScriptSyntax.ps1
 
+      - name: Check relative Markdown links
+        shell: pwsh
+        run: ./tests/Test-MarkdownLinks.ps1
+
       - name: Run sign-in exercise tests
         shell: pwsh
         run: ./tests/Measure-SignInActivity.Tests.ps1

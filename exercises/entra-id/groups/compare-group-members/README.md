@@ -1,5 +1,13 @@
 # 05 – Compare two Entra ID groups
 
+| | |
+| --- | --- |
+| Level | 🌿 Building confidence |
+| Impact | 🟢 Read only |
+| Tool | Microsoft Graph PowerShell |
+| Required scopes | `Group.Read.All`, `GroupMember.Read.All`, `User.Read.All` |
+| Validation | Syntax checked. Live use requires approved tenant access. |
+
 ## Situation
 
 One Entra ID group represents users who should receive access. Another group gives access to the application.
@@ -35,7 +43,7 @@ Get-MgContext
 Use exact group display names:
 
 ```powershell
-.\exercises\identity-and-access\05-compare-group-members\Compare-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\compare-group-members\Compare-EntraGroupMembers.ps1 `
     -ReferenceGroup 'SG-Example-Approved-Users' `
     -TargetGroup 'SG-Example-App-Users'
 ```
@@ -43,7 +51,7 @@ Use exact group display names:
 Group object IDs can be used when names aren't unique:
 
 ```powershell
-.\exercises\identity-and-access\05-compare-group-members\Compare-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\compare-group-members\Compare-EntraGroupMembers.ps1 `
     -ReferenceGroup '00000000-0000-0000-0000-000000000000' `
     -TargetGroup '11111111-1111-1111-1111-111111111111'
 ```
@@ -51,7 +59,7 @@ Group object IDs can be used when names aren't unique:
 Show only differences:
 
 ```powershell
-.\exercises\identity-and-access\05-compare-group-members\Compare-EntraGroupMembers.ps1 `
+.\exercises\entra-id\groups\compare-group-members\Compare-EntraGroupMembers.ps1 `
     -ReferenceGroup 'SG-Example-Approved-Users' `
     -TargetGroup 'SG-Example-App-Users' |
     Where-Object Status -ne 'Present'
