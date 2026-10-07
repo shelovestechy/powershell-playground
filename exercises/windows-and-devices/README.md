@@ -2,6 +2,14 @@
 
 Small Service Desk exercises for understanding what Windows detects and what information is available before troubleshooting starts.
 
+## Available exercises
+
+| Exercise | Level | Impact |
+| --- | --- | --- |
+| [Generate and read a WLAN report](./wlan-report/) | 🌱 Starting point | 🟡 Local HTML report |
+
+The WLAN exercise includes the CMD command, its PowerShell equivalent and a fictional Ankkalinna troubleshooting case.
+
 ## Planned topics
 
 - list recognised devices
@@ -13,7 +21,7 @@ Small Service Desk exercises for understanding what Windows detects and what inf
 - inspect network adapters
 - review recent restart information
 
-The first exercises will be read only. Hardware is already capable of surprising everyone without help from the script.
+Most planned exercises will be read only. The WLAN exercise creates a local report. Hardware is already capable of surprising everyone without help from the script.
 
 ## Sources
 
