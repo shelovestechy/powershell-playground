@@ -34,7 +34,7 @@ The guide explains the traffic lights, a sensible exercise order and what can be
 | [PowerShell basics](./exercises/powershell-basics/) | Objects, filters, pipelines and errors | Growing next |
 | [Microsoft Entra ID](./exercises/entra-id/) | Users, groups and access checks | 4 exercises |
 | [Exchange Online](./exercises/exchange-online/) | Shared mailboxes and permissions | 1 exercise |
-| [Windows and devices](./exercises/windows-and-devices/) | Hardware, drivers and diagnostics | Planned |
+| [Windows and devices](./exercises/windows-and-devices/) | Hardware, drivers and diagnostics | 1 exercise |
 | [Software management](./exercises/software-management/) | Applications and uninstall problems | Planned |
 | [Security and audit](./exercises/security-and-audit/) | Sign-ins, evidence and review logic | 1 exercise |
 | [Reporting and files](./exercises/reporting-and-files/) | CSV, Excel-friendly output and comparisons | Planned |
